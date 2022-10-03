@@ -1,0 +1,29 @@
+{
+    "name": "soeurngsar/gutenberg",
+    "description": "Content builder like wordpress Gutenberg by using Laraberg for laravel backpack",
+    "keywords": ["Laravel", "Builder", "Gutenberg", "Content Builder","Content", "Backpack", "Laraberg"],
+    "authors": [
+    	{
+            "name": "Sar Soeurng",
+            "email": "sar.soeurng@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "backpack/crud": "4.1.*",
+        "van-ons/laraberg": "^2.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+          "SoeurngSar\\Gutenberg\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SoeurngSar\\Gutenberg\\GutenbergServiceProvider"
+            ]
+        }
+    }
+}
