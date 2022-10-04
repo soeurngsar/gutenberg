@@ -6,14 +6,14 @@
 ```php
 composer require soeurngsar/gutenberg
 ```
-2. Publish resources
+2. Publish views (optional)
 ```php
 php artisan vendor:publish --provider="SoeurngSar\Gutenberg\GutenbergServiceProvider"
-
+```
+3. Publish laraberg resources
+```php
 php artisan vendor:publish --provider="VanOns\Laraberg\LarabergServiceProvider"
 ```
-
-
 ### Usage
 On your CRUD Controller just change type to use gutenberg field
 ```php
@@ -21,14 +21,15 @@ On your CRUD Controller just change type to use gutenberg field
 $this->crud->addField([
   'name' => 'content',
   'label' => trans('backpack::pagemanager.content'),
-  'type' => 'gutenberg::gutenberg',
+  'view_namespace' => 'gutenberg::fields', // this prop
+  'type' => 'gutenberg', // this prop
   'placeholder' => trans('backpack::pagemanager.content_placeholder'),
 ]);
 ```
 
 For other usage related Laraberg please follow their [documentation](https://github.com/VanOns/laraberg)
 
-### Update 
+### Update when you already published view (point 2 above)
 When updating Gutenberg you have to publish the vendor files again by running this command:
 
 ```php
